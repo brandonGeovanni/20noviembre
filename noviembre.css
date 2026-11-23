@@ -1,0 +1,279 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f2eb;
+    color: #26332c;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(120deg, #004b30, #008d55);
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+nav a:focus-visible,
+.btn:focus-visible,
+.card:focus-visible,
+.skip-link:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: fixed;
+    left: 12px;
+    top: -60px;
+    z-index: 2000;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: #18231d;
+    color: white;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+.hero {
+    min-height: 580px;
+    background:
+        linear-gradient(#0008, #0009),
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1800&q=85");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h2 {
+    color: #ffd166;
+    font-size: 28px;
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 75px);
+    margin: 20px 0;
+    text-shadow: 3px 3px 10px black;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 32px;
+    background: #ce293d;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #a7192c;
+    transform: translateY(-5px);
+}
+
+section {
+    padding: 80px 9%;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 36px;
+    color: #006341;
+    margin-bottom: 35px;
+}
+
+section p {
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+#historia {
+    text-align: center;
+}
+
+#personajes {
+    background: #e8eee8;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 25px;
+    box-shadow: 0 8px 25px #0001;
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px #0003;
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: #006341;
+    margin: 20px;
+}
+
+.card p {
+    padding: 0 20px;
+    color: #555;
+}
+
+#importancia {
+    background: linear-gradient(120deg, #006341, #003d27);
+    color: white;
+    text-align: center;
+}
+
+#importancia .titulo {
+    color: #ffd166;
+}
+
+footer {
+    background: #18231d;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+footer h2 {
+    color: #ffd166;
+    margin-bottom: 15px;
+}
+
+.animacion {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.animacion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card.seleccionada {
+    border-bottom: 5px solid #ce293d;
+    transform: scale(1.03);
+}
+
+.boton-arriba {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #006341;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+}
+
+.boton-arriba:hover {
+    background: #003d27;
+}
+
+.pagina-cargada {
+    animation: entrada 1s ease;
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media(max-width: 650px) {
+    header {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        font-size: 13px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+}
